@@ -30,10 +30,6 @@ A **modern, interactive dashboard** designed to help you stay organized, motivat
 ### 6. Theme Toggle
 - Switch between **light** and **dark** modes with a single click.
 
-## Demo
-
-![Dashboard Screenshot](./screenshot.png)  
-*(Add a screenshot of your dashboard here for better visibility)*
 
 ## Technologies Used
 - **HTML5** – Markup for the dashboard structure.
