@@ -77,7 +77,7 @@ productivity-dashboard/
 ├── icons/            # Icons used in the dashboard
 └── README.md
 
-## Author
+## Author 
 
 Shahbaz Alam
 
