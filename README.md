@@ -50,10 +50,11 @@ cd productivity-dashboard
 3. Open index.html in your browser.
 
 4. Add your Weather API key in config.js:
+
 const WEATHER_API_KEY = "YOUR_API_KEY_HERE";
 
 
-Usage
+## Usage
 
 - To-Do List: Click the "To Do List" card → Add tasks → Mark as important → Save in local storage.
 
@@ -67,7 +68,7 @@ Usage
 
 - Theme Toggle: Click the sun/moon icon to switch between light and dark modes.
 
-Folder Structure
+## Folder Structure
 productivity-dashboard/
 │
 ├── index.html
@@ -78,12 +79,12 @@ productivity-dashboard/
 ├── icons/            # Icons used in the dashboard
 └── README.md
 
-Author
+## Author
 
 Shahbaz Alam
 
-GitHub: https://github.com/shahbazal0m
+- GitHub: https://github.com/shahbazal0m
 
-LinkedIn: https://www.linkedin.com/in/iamshahbaz-alam/
+- LinkedIn: https://www.linkedin.com/in/iamshahbaz-alam/
 
 "Stay productive, stay focused"
