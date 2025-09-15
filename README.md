@@ -50,7 +50,6 @@ cd productivity-dashboard
 3. Open index.html in your browser.
 
 4. Add your Weather API key in config.js:
-
 const WEATHER_API_KEY = "YOUR_API_KEY_HERE";
 
 
