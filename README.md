@@ -41,15 +41,14 @@ A **modern, interactive dashboard** designed to help you stay organized, motivat
 
 ## Installation
 
-1. Clone the repository:  
+1. Clone the repository:
+```   
    git clone https://github.com/shahbazal0m/productivity-dashboard
-
-2. Navigate to the project folder:
+```
+3. Navigate to the project folder:
 cd productivity-dashboard
-
-3. Open index.html in your browser.
-
-4. Add your Weather API key in config.js:
+4. Open index.html in your browser.
+5. Add your Weather API key in config.js:
 const WEATHER_API_KEY = "YOUR_API_KEY_HERE";
 
 
