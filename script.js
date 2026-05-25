@@ -18,6 +18,7 @@ function openFeatures() {
 
 openFeatures();
 
+
 function todoList() {
   var currentTask = [];
 
@@ -80,6 +81,7 @@ function todoList() {
 
 todoList();
 
+
 function dailyPlanner() {
   var dayPlanner = document.querySelector(".day-planner");
 
@@ -116,26 +118,30 @@ function dailyPlanner() {
 
 dailyPlanner();
 
+
 function motivationalQuote() {
   var motivationQuoteContent = document.querySelector(".motivation-2 h1");
   var motivationAuthor = document.querySelector(".motivation-3 h2");
 
   async function fetchQuote() {
     try {
-      // CORS bypass using AllOrigins
-      let response = await fetch(
-        "https://api.allorigins.win/get?url=" +
-          encodeURIComponent("https://zenquotes.io/api/random")
-      );
-      let rawData = await response.json();
-      let data = JSON.parse(rawData.contents)[0]; // ZenQuotes returns array
+      let response = await fetch("https://quotes.freeapi.app/api/v1/public/quotes/quote/random");
+      let data = await response.json();
 
-      motivationQuoteContent.textContent = data.q; // quote
-      motivationAuthor.textContent = `— ${data.a}`; // author
+      motivationQuoteContent.textContent = data.data.content;
+      motivationAuthor.textContent = `— ${data.data.author}`;
     } catch (error) {
       console.error("Error fetching quote:", error);
-      motivationQuoteContent.textContent = "Unable to fetch quote.";
-      motivationAuthor.textContent = "";
+      // Fallback quotes agar API fail ho jaye
+      var fallbackQuotes = [
+        { q: "The secret of getting ahead is getting started.", a: "Mark Twain" },
+        { q: "It always seems impossible until it's done.", a: "Nelson Mandela" },
+        { q: "Don't watch the clock; do what it does. Keep going.", a: "Sam Levenson" },
+        { q: "Believe you can and you're halfway there.", a: "Theodore Roosevelt" },
+      ];
+      var random = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
+      motivationQuoteContent.textContent = random.q;
+      motivationAuthor.textContent = `— ${random.a}`;
     }
   }
 
@@ -143,6 +149,7 @@ function motivationalQuote() {
 }
 
 motivationalQuote();
+
 
 function pomodoroTimer() {
   let timer = document.querySelector(".pomo-timer h1");
@@ -311,6 +318,64 @@ function weatherFunctionality() {
 
 weatherFunctionality();
 
+
+
+function goalsList() {
+  var currentGoals = [];
+ 
+  if (localStorage.getItem("currentGoals")) {
+    currentGoals = JSON.parse(localStorage.getItem("currentGoals"));
+  }
+ 
+  function renderGoals() {
+    let allGoals = document.querySelector(".allGoals");
+ 
+    let sum = "";
+    currentGoals.forEach(function (elem, idx) {
+      sum += `<div class="task">
+        <h5>${elem.task} <span class="${elem.imp}">imp</span></h5>
+        <button id="${idx}">Mark as Completed</button>
+      </div>`;
+    });
+ 
+    allGoals.innerHTML = sum;
+    localStorage.setItem("currentGoals", JSON.stringify(currentGoals));
+ 
+    document.querySelectorAll(".allGoals .task button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        currentGoals.splice(btn.id, 1);
+        renderGoals();
+      });
+    });
+  }
+ 
+  renderGoals();
+ 
+  let form = document.querySelector(".daily-goals-fullpage .addTask form");
+  let goalInput = document.querySelector("#goal-input");
+  let goalDetails = document.querySelector(".daily-goals-fullpage textarea");
+  let goalCheckbox = document.querySelector("#goal-check");
+ 
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+ 
+    if (!goalInput.value.trim()) return;
+ 
+    currentGoals.push({
+      task: goalInput.value,
+      details: goalDetails.value,
+      imp: goalCheckbox.checked,
+    });
+ 
+    renderGoals();
+ 
+    goalInput.value = "";
+    goalDetails.value = "";
+    goalCheckbox.checked = false;
+  });
+}
+ 
+goalsList();
 
 
 function themeToggle() {

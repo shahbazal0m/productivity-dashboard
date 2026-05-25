@@ -18,14 +18,17 @@
 
   <body>
     <div class="main">
-      <nav>
-        <div class="nav-in">
-          <h2>Productivity DashBoard</h2>
-          <div class="theme">
-            <i class="ri-sun-line"></i>
-          </div>
-        </div>
-      </nav>
+<nav>
+  <div class="nav-in">
+    <div class="nav-logo">
+      <i class="ri-dashboard-3-line"></i>
+      <h2>Productivity <span style="color: var(--tri1);">Dashboard</span></h2>
+    </div>
+    <div class="theme">
+      <i class="ri-sun-line"></i>
+    </div>
+  </div>
+</nav>
       <section class="allElems">
         <header>
           <div class="header1">
@@ -146,45 +149,50 @@
         </div>
       </section>
 
-      <section class="fullElem daily-goals-fullpage">
-        <button class="back" id="4">Close</button>
-        <h1>Daily Goals!</h1>
-        <div class="todo-container">
-          <div class="addTask">
-            <form>
-              <input
-                id="task-input"
-                type="text"
-                placeholder="Enter Your Goals..."
-              />
-              <textarea
-                placeholder="Enter Goals Details..."
-                name=""
-                id=""
-                cols="30"
-                rows="6"
-              ></textarea>
-              <div class="mark-imp">
-                <input type="checkbox" name="checkbox" id="check" />
-                <label for="check">Mark as Important!</label>
-              </div>
-              <button>Add Goals</button>
-            </form>
-          </div>
+<section class="fullElem daily-goals-fullpage">
+  <button class="back" id="4">Close</button>
+  <h1>Daily Goals!</h1>
+  <div class="todo-container">
+    <div class="addTask">
+      <form>
+        <input id="goal-input" type="text" placeholder="Enter Your Goals..." />
+        <textarea placeholder="Enter Goals Details..." cols="30" rows="6"></textarea>
+        <div class="mark-imp">
+          <input type="checkbox" id="goal-check" />
+          <label for="goal-check">Mark as Important!</label>
         </div>
-      </section>
+        <button>Add Goal</button>
+      </form>
+    </div>
+
+    <div class="allGoals">
+    </div>
+  </div>
+</section>
     </div>
 
     <footer class="footer">
-      <p>© 2025 Productivity Dashboard | Built by Shahbaz Alam</p>
-      <div class="footer-links">
-        <a href="https://github.com/shahbazal0m" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/iamshahbaz-alam/" target="_blank"
-          >LinkedIn</a
-        >
-      </div>
-      <p class="quote">"Stay productive, stay focused"</p>
-    </footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Productivity <span style="color: var(--tri1);">Dashboard</span></h3>
+      <p>"Stay productive, stay focused"</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/shahbazal0m" target="_blank">
+        <i class="ri-github-fill"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/iamshahbaz-alam/" target="_blank">
+        <i class="ri-linkedin-fill"></i> LinkedIn
+      </a>
+      <a href="https://x.com/shahbaz_al0m" target="_blank">
+       <i class="ri-twitter-x-fill"></i> X
+      </a>
+    </div>
+    <div class="footer-copy">
+      <p>© 2026 Built by <span>Shahbaz Alam</span></p>
+    </div>
+  </div>
+</footer>
     
     <script src="config.js"></script>
     <script src="script.js"></script>
