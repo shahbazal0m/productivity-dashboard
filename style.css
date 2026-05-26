@@ -52,7 +52,6 @@ body {
     flex-direction: column;
 }
 
-
 body.light-theme {
     --pri: #1a1a1a;
     --sec: #f8f8f8;
@@ -120,7 +119,6 @@ nav {
 
 .theme:active { scale: 0.95; }
 
-/* KEY FIX: section only wraps visible content */
 section.allElems {
     width: 100%;
     padding: 40px;
@@ -203,18 +201,43 @@ header .header2 h3 {
     margin-bottom: 4px;
 }
 
+/* =============================================
+   DESKTOP: allFeatures — normal flex/scroll
+   ============================================= */
 .allElems .allFeatures {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     gap: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
 .allElems .allFeatures::-webkit-scrollbar { display: none; }
+
+/* Desktop: swiper-wrapper aur swiper-slide ko normal flex children ki tarah behave karao */
+@media (min-width: 769px) {
+    .features-swiper {
+        overflow: visible !important;
+    }
+    .features-wrapper {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 30px !important;
+        transform: none !important;
+        width: auto !important;
+    }
+    .features-slide {
+        width: auto !important;
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+    }
+    .features-pagination {
+        display: none !important;
+    }
+}
 
 .elem {
     height: 330px;
@@ -273,7 +296,7 @@ header .header2 h3 {
     padding: 40px;
     padding-top: 100px;
     display: none;
-     visibility: hidden;
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -298,8 +321,9 @@ header .header2 h3 {
 .back:active { scale: 0.97; }
 
 
-/* TO-DO LIST */
-
+/* =====================
+   TO-DO LIST
+   ===================== */
 .todo-list-fullpage h2 { font-size: 42px; }
 
 .todo-list-fullpage .todo-container {
@@ -453,8 +477,9 @@ header .header2 h3 {
 }
 
 
-/* DAILY PLANNER */
-
+/* =====================
+   DAILY PLANNER
+   ===================== */
 .daily-planner-fullpage h2 { font-size: 42px; }
 
 .daily-planner-fullpage .day-planner {
@@ -499,8 +524,9 @@ header .header2 h3 {
 }
 
 
-/* MOTIVATION */
-
+/* =====================
+   MOTIVATION
+   ===================== */
 .motivation-fullPage-container {
     height: 100%;
     width: 100%;
@@ -590,8 +616,9 @@ header .header2 h3 {
 }
 
 
-/* POMODORO */
-
+/* =====================
+   POMODORO
+   ===================== */
 .pomodoro-fullpage h2 { font-size: 42px; }
 
 .pomodoro-fullpage .session {
@@ -633,8 +660,9 @@ header .header2 h3 {
 .pomo-timer button:active { box-shadow: 0px 0px 0px var(--black); }
 
 
-/* DAILY GOALS */
-
+/* =====================
+   DAILY GOALS
+   ===================== */
 .daily-goals-fullpage h1 { font-size: 42px; }
 
 .daily-goals-fullpage .todo-container {
@@ -674,8 +702,9 @@ header .header2 h3 {
 }
 
 
-/* FOOTER */
-
+/* =====================
+   FOOTER
+   ===================== */
 .footer {
     background: var(--tri2);
     padding: 25px 40px;
@@ -726,9 +755,9 @@ header .header2 h3 {
 .footer-copy span { color: var(--tri1); font-weight: 600; }
 
 
-/* RESPONSIVE DESIGN */
-
-/* Tablet — 1024px */
+/* =============================================
+   RESPONSIVE — Tablet 1024px
+   ============================================= */
 @media (max-width: 1024px) {
     nav { padding: 10px 20px; }
     section.allElems { padding: 20px; padding-bottom: 15px; }
@@ -759,16 +788,10 @@ header .header2 h3 {
     }
 
     .todo-list-fullpage .todo-container .addTask,
-    .daily-goals-fullpage .todo-container .addTask {
-        width: 100%;
-        height: auto;
-    }
+    .daily-goals-fullpage .todo-container .addTask { width: 100%; height: auto; }
 
     .todo-list-fullpage .todo-container .allTask,
-    .daily-goals-fullpage .todo-container .allGoals {
-        width: 100%;
-        height: 400px;
-    }
+    .daily-goals-fullpage .todo-container .allGoals { width: 100%; height: 400px; }
 
     .daily-planner-fullpage .day-planner .day-planner-time { width: 100%; }
     .motivational-fullpage .motivation-container { width: 90%; }
@@ -783,16 +806,18 @@ header .header2 h3 {
 }
 
 
-/* Mobile — 768px */
+/* =============================================
+   RESPONSIVE — Mobile 768px
+   ============================================= */
 @media (max-width: 768px) {
     nav { padding: 8px 15px; }
-    .nav-in { padding: 10px 15px; border-radius: 10px; }
+    .nav-in { padding: 10px 15px; border-radius: 20px; }
     .nav-logo i { font-size: 22px; }
     .nav-in h2 { font-size: 18px; }
     .theme { padding: 6px 10px; }
     .theme i { font-size: 16px; }
 
-    section.allElems { padding: 15px; padding-bottom: 10px; }
+    section.allElems { padding: 15px; padding-bottom: 25px; }
 
     .allElems header {
         padding: 20px;
@@ -808,12 +833,54 @@ header .header2 h3 {
     header .header2 h4 { font-size: 13px; margin-bottom: 6px; }
     header .header2 h3 { font-size: 11px; }
 
-    .allElems .allFeatures { gap: 12px; }
+    /* ---- SWIPER MOBILE STYLES ---- */
+    .features-swiper {
+        overflow: hidden !important;
+        padding-bottom: 38px !important;
+        /* width 100% ensure karo taki swiper thoda space le */
+        width: 100% !important;
+    }
+
+    /* Swiper ke andar wrapper normal swiper flex hai — gap spaceBetween se handle hoga */
+    .features-wrapper {
+        gap: 0 !important; /* gap swiper ke spaceBetween option se */
+    }
+
+    /* Har slide ki width auto — swiper slidesPerView:'auto' se handle hogi */
+    .features-slide {
+        width: auto !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Pagination dots style */
+    .features-pagination {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        bottom: 4px !important;
+    }
+
+    .features-pagination .swiper-pagination-bullet {
+        background: var(--tri1) !important;
+        opacity: 0.35 !important;
+        width: 8px !important;
+        height: 8px !important;
+        transition: all 0.3s ease;
+    }
+
+    .features-pagination .swiper-pagination-bullet-active {
+        opacity: 1 !important;
+        background: var(--tri1) !important;
+        width: 22px !important;
+        border-radius: 4px !important;
+    }
+
+    /* ---- ELEM SIZE MOBILE ---- */
     .elem { height: 200px; width: 155px; min-width: 155px; }
     .elem h2 { font-size: 15px; bottom: 10px; left: 10px; }
 
-    .fullElem { padding: 15px; padding-top: 80px; }
-    .back { font-size: 14px; padding: 8px 14px; top: 75px; right: 3%; }
+    .fullElem { padding: 15px; padding-top: 100px; }
+    .back { font-size: 14px; padding: 8px 14px; top: 95px; right: 3%; }
 
     .todo-list-fullpage h2,
     .daily-planner-fullpage h2,
@@ -851,17 +918,14 @@ header .header2 h3 {
     .daily-planner-fullpage .day-planner { padding: 12px; height: auto; }
     .daily-planner-fullpage .day-planner .day-planner-time { width: 100%; }
     .day-planner .day-planner-time input { font-size: 16px; padding-top: 26px; }
-    .daily-planner-fullpage h2 {
-    font-size: 20px;
-    padding-right: 80px;
-}
+    .daily-planner-fullpage h2 { font-size: 20px; padding-right: 80px; }
 
     .motivational-fullpage .motivation-container { width: 95%; }
     .motivation-1 h2 { font-size: 18px; padding: 12px 16px; }
     .motivation-2 h1 { font-size: 18px; }
     .motivation-2 { padding: 12px 16px; }
     .motivation-3 h2 { font-size: 15px; padding: 12px 16px; }
-    
+
     .pomodoro-fullpage .session {
         position: relative;
         top: auto;
@@ -881,14 +945,16 @@ header .header2 h3 {
     .pomo-timer h1 { font-size: 68px; }
     .pomo-timer button { font-size: 15px; padding: 8px 12px; margin: 4px; }
 
-    .footer { padding: 15px; }
+    .footer { padding: 15px; margin-top: 25px; }
     .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 25px; }
     .footer-links { justify-content: center; gap: 8px; flex-wrap: nowrap; }
     .footer-links a { font-size: 13px; padding: 6px 10px; }
 }
 
 
-/* Small Mobile — 480px */
+/* =============================================
+   RESPONSIVE — Small Mobile 480px
+   ============================================= */
 @media (max-width: 480px) {
     nav { padding: 6px 10px; }
     .nav-in h2 { font-size: 14px; }

@@ -13,6 +13,10 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -29,6 +33,7 @@
           </div>
         </div>
       </nav>
+
       <section class="allElems">
         <header>
           <div class="header1">
@@ -36,7 +41,6 @@
             <h1>Saturday, 1:00 pm</h1>
             <h4>Bhopal (MP)</h4>
           </div>
-
           <div class="header2">
             <h2>20 °C</h2>
             <h4>Light rain</h4>
@@ -45,30 +49,47 @@
             <h3 class="Wind">Wind: 10 km/h</h3>
           </div>
         </header>
-        <div class="allFeatures">
-          <div class="todo elem" id="0">
-            <img src="https://images.unsplash.com/photo-1598791318878-10e76d178023?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9kbyUyMGxpc3R8ZW58MHx8MHx8fDA%3D" alt="" />
-            <h2>To Do List</h2>
+
+        <!-- Desktop: normal flex scroll | Mobile: Swiper -->
+        <div class="allFeatures swiper features-swiper">
+          <div class="swiper-wrapper features-wrapper">
+            <div class="swiper-slide features-slide">
+              <div class="todo elem" id="0">
+                <img src="https://images.unsplash.com/photo-1598791318878-10e76d178023?w=600&auto=format&fit=crop&q=60" alt="To Do List" />
+                <h2>To Do List</h2>
+              </div>
+            </div>
+            <div class="swiper-slide features-slide">
+              <div class="daily elem" id="1">
+                <img src="https://images.unsplash.com/photo-1636713891978-7b20a11128f5?w=600&auto=format&fit=crop&q=60" alt="Daily Planner" />
+                <h2>Daily Planner</h2>
+              </div>
+            </div>
+            <div class="swiper-slide features-slide">
+              <div class="moti elem" id="2">
+                <img src="https://plus.unsplash.com/premium_photo-1671599016130-7882dbff302f?w=600&auto=format&fit=crop&q=60" alt="Motivation" />
+                <h2>Motivation</h2>
+              </div>
+            </div>
+            <div class="swiper-slide features-slide">
+              <div class="pomo elem" id="3">
+                <img src="https://images.unsplash.com/photo-1513544705284-99373737fab6?w=600&auto=format&fit=crop&q=60" alt="Pomodoro Timer" />
+                <h2>Pomodoro Timer</h2>
+              </div>
+            </div>
+            <div class="swiper-slide features-slide">
+              <div class="goals elem" id="4">
+                <img src="https://media.istockphoto.com/id/679546600/photo/small-steps-big-changes.webp?a=1&b=1&s=612x612&w=0&k=20&c=PjGDirEefGmbjKSPay1T5zJZpAoo6zinCTXNsSDAtS4=" alt="Daily Goals" />
+                <h2>Daily Goals</h2>
+              </div>
+            </div>
           </div>
-          <div class="daily elem" id="1">
-            <img src="https://images.unsplash.com/photo-1636713891978-7b20a11128f5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGRhaWx5JTIwcGxhbm5lcnxlbnwwfHwwfHx8MA%3D%3D" alt="" />
-            <h2>Daily Planner</h2>
-          </div>
-          <div class="moti elem" id="2">
-            <img src="https://plus.unsplash.com/premium_photo-1671599016130-7882dbff302f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW90aXZhdGlvbmFsfGVufDB8fDB8fHww" alt="" />
-            <h2>Motivation</h2>
-          </div>
-          <div class="pomo elem" id="3">
-            <img src="https://images.unsplash.com/photo-1513544705284-99373737fab6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9tb2Rvcm8lMjB0aW1lcnxlbnwwfHwwfHx8MA%3D%3D" alt="" />
-            <h2>Pomodoro Timer</h2>
-          </div>
-          <div class="goals elem" id="4">
-            <img src="https://media.istockphoto.com/id/679546600/photo/small-steps-big-changes.webp?a=1&b=1&s=612x612&w=0&k=20&c=PjGDirEefGmbjKSPay1T5zJZpAoo6zinCTXNsSDAtS4=" alt="" />
-            <h2>Daily Goals</h2>
-          </div>
+          <!-- Pagination dots — sirf mobile pe dikhenge CSS se -->
+          <div class="swiper-pagination features-pagination"></div>
         </div>
       </section>
 
+      <!-- TO DO LIST -->
       <section class="fullElem todo-list-fullpage">
         <button class="back" id="0">Close</button>
         <h2>Your Personalised Task List!</h2>
@@ -76,13 +97,7 @@
           <div class="addTask">
             <form>
               <input id="task-input" type="text" placeholder="Enter Task..." />
-              <textarea
-                placeholder="Enter Task Details..."
-                name=""
-                id=""
-                cols="30"
-                rows="6"
-              ></textarea>
+              <textarea placeholder="Enter Task Details..." cols="30" rows="6"></textarea>
               <div class="mark-imp">
                 <input type="checkbox" name="checkbox" id="check" />
                 <label for="check">Mark as Important!</label>
@@ -90,33 +105,18 @@
               <button>Add Task</button>
             </form>
           </div>
-
-          <div class="allTask">
-            <!-- <div class="task">
-                        <h5>Gym Jao</h5>
-                        <button>Mark as Completed</button>
-                    </div> -->
-          </div>
+          <div class="allTask"></div>
         </div>
       </section>
 
+      <!-- DAILY PLANNER -->
       <section class="fullElem daily-planner-fullpage">
         <button class="back" id="1">Close</button>
         <h2>Plan your day to be more Productive!</h2>
-
-        <div class="day-planner">
-          <!-- <div class="day-planner-time">
-                    <p>6:00 - 7:00</p>
-                    <input type="text" placeholder="...">
-                </div>
-
-                <div class="day-planner-time">
-                    <p>7:00</p>
-                    <input type="text" placeholder="...">
-                </div> -->
-        </div>
+        <div class="day-planner"></div>
       </section>
 
+      <!-- MOTIVATION -->
       <section class="fullElem motivational-fullpage">
         <button class="back" id="2">Close</button>
         <div class="motivation-fullPage-container">
@@ -137,6 +137,7 @@
         </div>
       </section>
 
+      <!-- POMODORO -->
       <section class="fullElem pomodoro-fullpage">
         <button class="back" id="3">Close</button>
         <h2>Study with me!</h2>
@@ -149,52 +150,52 @@
         </div>
       </section>
 
-    <section class="fullElem daily-goals-fullpage">
-      <button class="back" id="4">Close</button>
-      <h1>Daily Goals!</h1>
-      <div class="todo-container">
-        <div class="addTask">
-          <form>
-            <input id="goal-input" type="text" placeholder="Enter Your Goals..." />
-            <textarea placeholder="Enter Goals Details..." cols="30" rows="6"></textarea>
-            <div class="mark-imp">
-              <input type="checkbox" id="goal-check" />
-              <label for="goal-check">Mark as Important!</label>
-            </div>
-            <button>Add Goal</button>
-          </form>
+      <!-- DAILY GOALS -->
+      <section class="fullElem daily-goals-fullpage">
+        <button class="back" id="4">Close</button>
+        <h1>Daily Goals!</h1>
+        <div class="todo-container">
+          <div class="addTask">
+            <form>
+              <input id="goal-input" type="text" placeholder="Enter Your Goals..." />
+              <textarea placeholder="Enter Goals Details..." cols="30" rows="6"></textarea>
+              <div class="mark-imp">
+                <input type="checkbox" id="goal-check" />
+                <label for="goal-check">Mark as Important!</label>
+              </div>
+              <button>Add Goal</button>
+            </form>
+          </div>
+          <div class="allGoals"></div>
         </div>
-
-        <div class="allGoals">
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <h3>Productivity <span style="color: var(--tri1);">Dashboard</span></h3>
-        <p>"Stay productive, stay focused"</p>
-      </div>
-      <div class="footer-links">
-        <a href="https://github.com/shahbazal0m" target="_blank">
-          <i class="ri-github-fill"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/iamshahbaz-alam/" target="_blank">
-          <i class="ri-linkedin-fill"></i>
-        </a>
-        <a href="https://x.com/shahbaz_al0m" target="_blank">
-        <i class="ri-twitter-x-fill"></i>
-        </a>
-      </div>
-      <div class="footer-copy">
-        <p>© 2026 Built by <span>Shahbaz Alam</span></p>
-      </div>
+      </section>
     </div>
-  </footer>
-    
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>Productivity <span style="color: var(--tri1);">Dashboard</span></h3>
+          <p>"Stay productive, stay focused"</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/shahbazal0m" target="_blank">
+            <i class="ri-github-fill"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/iamshahbaz-alam/" target="_blank">
+            <i class="ri-linkedin-fill"></i>
+          </a>
+          <a href="https://x.com/shahbaz_al0m" target="_blank">
+            <i class="ri-twitter-x-fill"></i>
+          </a>
+        </div>
+        <div class="footer-copy">
+          <p>© 2026 Built by <span>Shahbaz Alam</span></p>
+        </div>
+      </div>
+    </footer>
+
     <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

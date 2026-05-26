@@ -22,7 +22,7 @@ openFeatures();
 
 
 function weatherFunctionality() {
-  var apiKey = WEATHER_API_KEY; 
+  var apiKey = WEATHER_API_KEY;
   var city = "Bhopal";
 
   var header1Time = document.querySelector(".header1 h1");
@@ -55,28 +55,14 @@ function weatherFunctionality() {
 
   function timeDate() {
     const totalDaysOfWeek = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
+      "Sunday", "Monday", "Tuesday", "Wednesday",
+      "Thursday", "Friday", "Saturday",
     ];
 
     const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      "January", "February", "March", "April",
+      "May", "June", "July", "August",
+      "September", "October", "November", "December",
     ];
 
     var date = new Date();
@@ -91,32 +77,18 @@ function weatherFunctionality() {
     header1Date.innerHTML = `${tarik} - ${month} - ${year}`;
 
     if (hours > 12) {
-      header1Time.innerHTML = `${dayOfWeek}, ${String(hours - 12).padStart(
-        2,
-        "0"
-      )}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
-        2,
-        "0"
-      )} PM`;
+      header1Time.innerHTML = `${dayOfWeek}, ${String(hours - 12).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")} PM`;
     } else {
-      header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart(
-        2,
-        "0"
-      )}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
-        2,
-        "0"
-      )} AM`;
+      header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")} AM`;
     }
   }
 
   weatherAPICall();
   timeDate();
-
   setInterval(timeDate, 1000);
 }
 
 weatherFunctionality();
-
 
 
 function todoList() {
@@ -124,33 +96,26 @@ function todoList() {
 
   if (localStorage.getItem("currentTask")) {
     currentTask = JSON.parse(localStorage.getItem("currentTask"));
-  } else {
-    console.log("Task list is empty");
   }
 
   function renderTask() {
     let allTask = document.querySelector(".allTask");
-
     let sum = "";
 
     currentTask.forEach(function (elem, idx) {
-      sum =
-      sum +
-        `<div class="task">
-            <div class="task-info">
-              <h5>${elem.task} <span class="${elem.imp}">imp</span></h5>
-              ${elem.details ? `<p class="task-detail">${elem.details}</p>` : ""}
-            </div>
-            <button id=${idx}>Mark as Completed</button>
+      sum += `<div class="task">
+        <div class="task-info">
+          <h5>${elem.task} <span class="${elem.imp}">imp</span></h5>
+          ${elem.details ? `<p class="task-detail">${elem.details}</p>` : ""}
+        </div>
+        <button id=${idx}>Mark as Completed</button>
       </div>`;
     });
 
     allTask.innerHTML = sum;
-
     localStorage.setItem("currentTask", JSON.stringify(currentTask));
 
     var markCompletedBtn = document.querySelectorAll(".task button");
-
     markCompletedBtn.forEach(function (btn) {
       btn.addEventListener("click", function () {
         currentTask.splice(btn.id, 1);
@@ -175,7 +140,6 @@ function todoList() {
     });
 
     renderTask();
-
     taskCheckbox.checked = false;
     taskInput.value = "";
     taskDetailsInput.value = "";
@@ -187,7 +151,6 @@ todoList();
 
 function dailyPlanner() {
   var dayPlanner = document.querySelector(".day-planner");
-
   var dayPlanData = JSON.parse(localStorage.getItem("dayPlanData")) || {};
 
   var hours = Array.from({ length: 18 }, function (elem, idx) {
@@ -197,23 +160,18 @@ function dailyPlanner() {
   var wholeDaySum = "";
   hours.forEach(function (elem, idx) {
     var savedData = dayPlanData[idx] || "";
-
-    wholeDaySum =
-      wholeDaySum +
-      `<div class="day-planner-time">
-        <p>${elem}</p>
-        <input id=${idx} type="text" placeholder="..." value = ${savedData}>
+    wholeDaySum += `<div class="day-planner-time">
+      <p>${elem}</p>
+      <input id=${idx} type="text" placeholder="..." value="${savedData}">
     </div>`;
   });
 
   dayPlanner.innerHTML = wholeDaySum;
 
   var dayPlannerInput = document.querySelectorAll(".day-planner input");
-
   dayPlannerInput.forEach(function (elem) {
     elem.addEventListener("input", function () {
       dayPlanData[elem.id] = elem.value;
-
       localStorage.setItem("dayPlanData", JSON.stringify(dayPlanData));
     });
   });
@@ -230,12 +188,10 @@ function motivationalQuote() {
     try {
       let response = await fetch("https://quotes.freeapi.app/api/v1/public/quotes/quote/random");
       let data = await response.json();
-
       motivationQuoteContent.textContent = data.data.content;
       motivationAuthor.textContent = `— ${data.data.author}`;
     } catch (error) {
       console.error("Error fetching quote:", error);
-      // Fallback quotes agar API fail ho jaye
       var fallbackQuotes = [
         { q: "The secret of getting ahead is getting started.", a: "Mark Twain" },
         { q: "It always seems impossible until it's done.", a: "Nelson Mandela" },
@@ -268,10 +224,7 @@ function pomodoroTimer() {
   function updateTimer() {
     let minutes = Math.floor(totalSeconds / 60);
     let seconds = totalSeconds % 60;
-
-    timer.innerHTML = `${String(minutes).padStart("2", "0")}:${String(
-      seconds
-    ).padStart("2", "0")}`;
+    timer.innerHTML = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
   }
 
   function startTimer() {
@@ -286,7 +239,7 @@ function pomodoroTimer() {
           isWorkSession = false;
           clearInterval(timerInterval);
           timer.innerHTML = "05:00";
-          session.innerHTML = "Take aBreak";
+          session.innerHTML = "Take a Break";
           session.style.backgroundColor = "var(--blue)";
           totalSeconds = 5 * 60;
         }
@@ -308,15 +261,14 @@ function pomodoroTimer() {
     }
   }
 
-  function pauseTimer() {
-    clearInterval(timerInterval);
-  }
+  function pauseTimer() { clearInterval(timerInterval); }
 
   function resetTimer() {
     totalSeconds = 25 * 60;
     clearInterval(timerInterval);
     updateTimer();
   }
+
   startBtn.addEventListener("click", startTimer);
   pauseBtn.addEventListener("click", pauseTimer);
   resetBtn.addEventListener("click", resetTimer);
@@ -325,18 +277,17 @@ function pomodoroTimer() {
 pomodoroTimer();
 
 
-
 function goalsList() {
   var currentGoals = [];
- 
+
   if (localStorage.getItem("currentGoals")) {
     currentGoals = JSON.parse(localStorage.getItem("currentGoals"));
   }
- 
+
   function renderGoals() {
     let allGoals = document.querySelector(".allGoals");
- 
     let sum = "";
+
     currentGoals.forEach(function (elem, idx) {
       sum += `<div class="task">
         <div class="task-info">
@@ -346,10 +297,10 @@ function goalsList() {
         <button id="${idx}">Mark as Completed</button>
       </div>`;
     });
- 
+
     allGoals.innerHTML = sum;
     localStorage.setItem("currentGoals", JSON.stringify(currentGoals));
- 
+
     document.querySelectorAll(".allGoals .task button").forEach(function (btn) {
       btn.addEventListener("click", function () {
         currentGoals.splice(btn.id, 1);
@@ -357,33 +308,31 @@ function goalsList() {
       });
     });
   }
- 
+
   renderGoals();
- 
+
   let form = document.querySelector(".daily-goals-fullpage .addTask form");
   let goalInput = document.querySelector("#goal-input");
   let goalDetails = document.querySelector(".daily-goals-fullpage textarea");
   let goalCheckbox = document.querySelector("#goal-check");
- 
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
- 
     if (!goalInput.value.trim()) return;
- 
+
     currentGoals.push({
       task: goalInput.value,
       details: goalDetails.value,
       imp: goalCheckbox.checked,
     });
- 
+
     renderGoals();
- 
     goalInput.value = "";
     goalDetails.value = "";
     goalCheckbox.checked = false;
   });
 }
- 
+
 goalsList();
 
 
@@ -399,10 +348,44 @@ function themeToggle() {
       icon.classList.add("ri-moon-line");
     } else {
       icon.classList.remove("ri-moon-line");
-      icon.classList.add("ri-sun-line"); 
+      icon.classList.add("ri-sun-line");
     }
   });
 }
 
 themeToggle();
 
+
+/* =============================================
+   SWIPER — Sirf mobile pe initialize hoga
+   Desktop pe Swiper bilkul kaam nahi karega,
+   CSS se normal flex scroll hoga
+   ============================================= */
+function initFeatureSwiper() {
+  if (window.innerWidth <= 768) {
+    new Swiper('.features-swiper', {
+      slidesPerView: 'auto',   // Har card apni natural width lega
+      spaceBetween: 15,        // Cards ke beech gap
+      freeMode: true,          // Freely scroll ho — kisi ek card pe snap nahi
+      grabCursor: true,        // Desktop pe bhi cursor grab dikhega
+      pagination: {
+        el: '.features-pagination',
+        clickable: true,       // Dots pe click karke bhi navigate kar sakte hain
+      },
+    });
+  }
+}
+
+// Page load pe run karo
+initFeatureSwiper();
+
+// Agar user window resize kare (landscape/portrait switch) to bhi handle ho
+// Note: Full page reload se behtar solution — Swiper destroy/reinit
+window.addEventListener('resize', function () {
+  // Simple approach: agar swiper initialize nahi tha aur ab mobile hai to reload
+  // Isko debounce kiya hai taaki baar baar fire na ho
+  clearTimeout(window._swiperResizeTimer);
+  window._swiperResizeTimer = setTimeout(function () {
+    location.reload();
+  }, 400);
+});

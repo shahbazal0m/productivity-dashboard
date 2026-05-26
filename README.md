@@ -1,6 +1,6 @@
 # Pro Dashboard | Shahbaz Alam
 
-A **modern, interactive productivity dashboard** designed to help you stay organized, motivated, and focused throughout the day. Built with **HTML, CSS, and JavaScript** — no frameworks, no libraries, just clean vanilla code.
+A **modern, interactive productivity dashboard** designed to help you stay organized, motivated, and focused throughout the day. Built with **HTML, CSS, and JavaScript** — no frameworks, just clean vanilla code.
 
 ---
 
@@ -39,6 +39,11 @@ A **modern, interactive productivity dashboard** designed to help you stay organ
 - Switch between **dark** and **light** mode instantly
 - Sun/moon icon in the navbar
 
+### 📱 Mobile Swipe Support
+- Integrated **Swiper.js** for smooth mobile card navigation
+- Touch-friendly swipe gestures
+- Pagination dots for better UX
+- Desktop uses normal horizontal scroll while mobile switches to Swiper slider automatically
 ---
 
 ## Technologies Used
@@ -48,6 +53,7 @@ A **modern, interactive productivity dashboard** designed to help you stay organ
 | HTML5 | Dashboard structure |
 | CSS3 | Styling, animations, responsive design |
 | JavaScript (ES6) | All dynamic features and API calls |
+| Swiper.js | Mobile swipe slider |
 | WeatherAPI | Real-time weather data |
 | FreeAPI Quotes | Motivational quotes |
 | localStorage | Data persistence |
@@ -72,6 +78,16 @@ const WEATHER_API_KEY = "YOUR_API_KEY_HERE";
 ```
 > Get your free API key at [weatherapi.com](https://www.weatherapi.com)
 
+4. **Swiper CDN**
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+```
+
 4. **Open `index.html` in your browser** — done!
 
 ---
@@ -94,11 +110,11 @@ const WEATHER_API_KEY = "YOUR_API_KEY_HERE";
 ```
 productivity-dashboard/
 │
-├── index.html          # Main HTML file
-├── style.css           # All styles + responsive design
-├── script.js           # All JavaScript logic
-├── config.js           # Weather API key (not committed)
-├── Fonts/              # Custom Aeonik fonts
+├── index.html          
+├── style.css           
+├── script.js           
+├── config.js           
+├── Fonts/              
 │   ├── AeonikTRIAL-Light.otf
 │   ├── AeonikTRIAL-Bold.otf
 │   └── AeonikTRIAL-Regular.otf
@@ -122,9 +138,23 @@ productivity-dashboard/
 
 **Shahbaz Alam**
 
+### 🌐 Connect with Me
+
 [![GitHub](https://img.shields.io/badge/GitHub-shahbazal0m-181717?style=flat&logo=github)](https://github.com/shahbazal0m)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-iamshahbaz--alam-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/iamshahbaz-alam/)
 [![Twitter](https://img.shields.io/badge/Twitter-shahbaz__al0m-1DA1F2?style=flat&logo=twitter)](https://x.com/shahbaz_al0m)
+
+---
+
+# Project Highlights
+
+- Fully Responsive UI
+- Smooth Mobile Swiping
+- Clean Modern Design
+- LocalStorage Integration
+- API Integration
+- Vanilla JavaScript Only
+- Productivity Focused Dashboard
 
 ---
 
