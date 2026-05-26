@@ -36,12 +36,21 @@
     color: var(--pri);
 }
 
-html, body {
+html,
+body {
     width: 100%;
+    min-height: 100%;
     overflow-x: hidden;
+    flex: 1;
 }
 
-
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    background-color: #2C1A0E;
+    display: flex;
+    flex-direction: column;
+}
 
 
 body.light-theme {
@@ -54,6 +63,7 @@ body.light-theme {
 
 .main {
     width: 100%;
+    flex: 1;
     background-color: #2C1A0E;
     padding-top: 100px;
 }
@@ -263,6 +273,7 @@ header .header2 h3 {
     padding: 40px;
     padding-top: 100px;
     display: none;
+     visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -273,7 +284,7 @@ header .header2 h3 {
 .back {
     position: fixed;
     right: 3%;
-    top: 20px;
+    top: 100px;
     background-color: var(--red);
     border-radius: 10px;
     padding: 12px 20px;
@@ -737,7 +748,7 @@ header .header2 h3 {
     header .header2 h2 { font-size: 48px; }
     header .header2 h4 { font-size: 18px; }
 
-    .allElems .allFeatures { gap: 20px; }
+    .allElems .allFeatures { gap: 20px; padding-bottom: 0; margin-bottom: 0; }
     .elem { height: 280px; width: 220px; min-width: 220px; }
 
     .todo-list-fullpage .todo-container,
@@ -804,7 +815,7 @@ header .header2 h3 {
     .elem h2 { font-size: 15px; bottom: 10px; left: 10px; }
 
     .fullElem { padding: 15px; padding-top: 80px; }
-    .back { font-size: 14px; padding: 8px 14px; top: 15px; right: 15px; }
+    .back { font-size: 14px; padding: 8px 14px; top: 75px; right: 3%; }
 
     .todo-list-fullpage h2,
     .daily-planner-fullpage h2,
@@ -842,15 +853,33 @@ header .header2 h3 {
     .daily-planner-fullpage .day-planner { padding: 12px; height: auto; }
     .daily-planner-fullpage .day-planner .day-planner-time { width: 100%; }
     .day-planner .day-planner-time input { font-size: 16px; padding-top: 26px; }
+    .daily-planner-fullpage h2 {
+    font-size: 20px;
+    padding-right: 80px;
+}
 
     .motivational-fullpage .motivation-container { width: 95%; }
     .motivation-1 h2 { font-size: 18px; padding: 12px 16px; }
     .motivation-2 h1 { font-size: 18px; }
     .motivation-2 { padding: 12px 16px; }
     .motivation-3 h2 { font-size: 15px; padding: 12px 16px; }
-
-    .pomodoro-fullpage .session { top: 22%; font-size: 15px; padding: 8px 14px; }
-    .pomodoro-fullpage .pomo-timer { top: 55%; }
+    
+    .pomodoro-fullpage .session {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .pomodoro-fullpage .pomo-timer {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 30px;
+        text-align: center;
+    }
     .pomo-timer h1 { font-size: 68px; }
     .pomo-timer button { font-size: 15px; padding: 8px 12px; margin: 4px; }
 
@@ -868,6 +897,9 @@ header .header2 h3 {
     .nav-logo i { font-size: 16px; }
 
     .main { padding-top: 70px; }
+
+    section.allElems { padding-bottom: 0; margin-bottom: 0; }
+    .allElems .allFeatures { padding-bottom: 0; margin-bottom: 0; }
 
     .allElems header { min-height: 150px; padding: 15px; margin-bottom: 20px; }
     header .header1 h1 { font-size: 22px; }
