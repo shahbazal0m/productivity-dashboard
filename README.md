@@ -2,8 +2,6 @@
 
 A **modern, interactive productivity dashboard** designed to help you stay organized, motivated, and focused throughout the day. Built with **HTML, CSS, and JavaScript** — no frameworks, no libraries, just clean vanilla code.
 
-![Dashboard Preview](https://images.unsplash.com/photo-1717361281431-e75c972e3f07?w=800&auto=format&fit=crop&q=60)
-
 ---
 
 ## Features
