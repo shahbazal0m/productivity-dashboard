@@ -70,7 +70,7 @@ body.light-theme {
 
 nav {
     position: fixed;
-    top: 0;
+    top: 10px;
     z-index: 999;
     width: 100%;
     padding: 12px 40px;
@@ -792,8 +792,6 @@ header .header2 h3 {
     .theme { padding: 6px 10px; }
     .theme i { font-size: 16px; }
 
-    .main { padding-top: 75px; }
-
     section.allElems { padding: 15px; padding-bottom: 10px; }
 
     .allElems header {
@@ -895,8 +893,6 @@ header .header2 h3 {
     nav { padding: 6px 10px; }
     .nav-in h2 { font-size: 14px; }
     .nav-logo i { font-size: 16px; }
-
-    .main { padding-top: 70px; }
 
     section.allElems { padding-bottom: 0; margin-bottom: 0; }
     .allElems .allFeatures { padding-bottom: 0; margin-bottom: 0; }
