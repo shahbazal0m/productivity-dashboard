@@ -356,11 +356,9 @@ function themeToggle() {
 themeToggle();
 
 
-/* =============================================
-   SWIPER — Sirf mobile pe initialize hoga
+/* SWIPER — Sirf mobile pe initialize hoga
    Desktop pe Swiper bilkul kaam nahi karega,
-   CSS se normal flex scroll hoga
-   ============================================= */
+   CSS se normal flex scroll hoga*/
 function initFeatureSwiper() {
   if (window.innerWidth <= 768) {
     new Swiper('.features-swiper', {
@@ -376,10 +374,10 @@ function initFeatureSwiper() {
   }
 }
 
-// Page load pe run karo
+// Page load pe run hogaa
 initFeatureSwiper();
 
-// Agar user window resize kare (landscape/portrait switch) to bhi handle ho
+// Agar user window resize kare (landscape/portrait switch) to bhi handle hogoo
 // Note: Full page reload se behtar solution — Swiper destroy/reinit
 window.addEventListener('resize', function () {
   // Simple approach: agar swiper initialize nahi tha aur ab mobile hai to reload

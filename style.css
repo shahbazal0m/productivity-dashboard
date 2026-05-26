@@ -201,9 +201,7 @@ header .header2 h3 {
     margin-bottom: 4px;
 }
 
-/* =============================================
-   DESKTOP: allFeatures — normal flex/scroll
-   ============================================= */
+/* DESKTOP: allFeatures — normal flex/scroll*/
 .allElems .allFeatures {
     display: flex;
     flex-wrap: nowrap;
@@ -217,7 +215,7 @@ header .header2 h3 {
 
 .allElems .allFeatures::-webkit-scrollbar { display: none; }
 
-/* Desktop: swiper-wrapper aur swiper-slide ko normal flex children ki tarah behave karao */
+/* Desktop: swiper-wrapper aur swiper-slide ko normal flex children ki tarah behave karegaa */
 @media (min-width: 769px) {
     .features-swiper {
         overflow: visible !important;
@@ -321,9 +319,7 @@ header .header2 h3 {
 .back:active { scale: 0.97; }
 
 
-/* =====================
-   TO-DO LIST
-   ===================== */
+/* TO-DO LIST */
 .todo-list-fullpage h2 { font-size: 42px; }
 
 .todo-list-fullpage .todo-container {
@@ -477,9 +473,7 @@ header .header2 h3 {
 }
 
 
-/* =====================
-   DAILY PLANNER
-   ===================== */
+/* DAILY PLANNER */
 .daily-planner-fullpage h2 { font-size: 42px; }
 
 .daily-planner-fullpage .day-planner {
@@ -524,9 +518,7 @@ header .header2 h3 {
 }
 
 
-/* =====================
-   MOTIVATION
-   ===================== */
+/* MOTIVATION */
 .motivation-fullPage-container {
     height: 100%;
     width: 100%;
@@ -616,9 +608,7 @@ header .header2 h3 {
 }
 
 
-/* =====================
-   POMODORO
-   ===================== */
+/* POMODORO */
 .pomodoro-fullpage h2 { font-size: 42px; }
 
 .pomodoro-fullpage .session {
@@ -660,9 +650,7 @@ header .header2 h3 {
 .pomo-timer button:active { box-shadow: 0px 0px 0px var(--black); }
 
 
-/* =====================
-   DAILY GOALS
-   ===================== */
+/*DAILY GOALS */
 .daily-goals-fullpage h1 { font-size: 42px; }
 
 .daily-goals-fullpage .todo-container {
@@ -702,9 +690,7 @@ header .header2 h3 {
 }
 
 
-/* =====================
-   FOOTER
-   ===================== */
+/* FOOTER */
 .footer {
     background: var(--tri2);
     padding: 25px 40px;
@@ -755,9 +741,7 @@ header .header2 h3 {
 .footer-copy span { color: var(--tri1); font-weight: 600; }
 
 
-/* =============================================
-   RESPONSIVE — Tablet 1024px
-   ============================================= */
+/* RESPONSIVE — Tablet 1024px */
 @media (max-width: 1024px) {
     nav { padding: 10px 20px; }
     section.allElems { padding: 20px; padding-bottom: 15px; }
@@ -806,9 +790,7 @@ header .header2 h3 {
 }
 
 
-/* =============================================
-   RESPONSIVE — Mobile 768px
-   ============================================= */
+/* RESPONSIVE — Mobile 768px */
 @media (max-width: 768px) {
     nav { padding: 8px 15px; }
     .nav-in { padding: 10px 15px; border-radius: 20px; }
@@ -952,9 +934,7 @@ header .header2 h3 {
 }
 
 
-/* =============================================
-   RESPONSIVE — Small Mobile 480px
-   ============================================= */
+/* RESPONSIVE — Small Mobile 480px */
 @media (max-width: 480px) {
     nav { padding: 6px 10px; }
     .nav-in h2 { font-size: 14px; }
