@@ -1,4 +1,4 @@
-# 🧠 Pro Dashboard | Shahbaz Alam
+# Pro Dashboard | Shahbaz Alam
 
 A **modern, interactive productivity dashboard** designed to help you stay organized, motivated, and focused throughout the day. Built with **HTML, CSS, and JavaScript** — no frameworks, no libraries, just clean vanilla code.
 
@@ -6,7 +6,7 @@ A **modern, interactive productivity dashboard** designed to help you stay organ
 
 ---
 
-## ✨ Features
+## Features
 
 ### ✅ To-Do List
 - Add tasks with details and mark them as important
@@ -43,7 +43,7 @@ A **modern, interactive productivity dashboard** designed to help you stay organ
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Technology | Usage |
 |---|---|
@@ -56,7 +56,7 @@ A **modern, interactive productivity dashboard** designed to help you stay organ
 
 ---
 
-## 🚀 Installation
+## Installation
 
 1. **Clone the repository:**
 ```bash
