@@ -520,11 +520,13 @@ header .header2 h3 {
     height: 100%;
     width: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
     background-color: var(--tri1);
     border-radius: 50px;
     scale: 1.05;
     filter: blur(60px);
-    z-index: 8;
+    z-index: -1;
 }
 
 .motivational-fullpage .motivation-container .motivation-wrapper {
@@ -677,7 +679,7 @@ header .header2 h3 {
 .footer {
     background: var(--tri2);
     padding: 25px 40px;
-    border-top: 2px solid var(--tri1);
+    border-top: 0.5px solid var(--tri1);
 }
 
 .footer-inner {
@@ -724,9 +726,7 @@ header .header2 h3 {
 .footer-copy span { color: var(--tri1); font-weight: 600; }
 
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
+/* RESPONSIVE DESIGN */
 
 /* Tablet — 1024px */
 @media (max-width: 1024px) {
@@ -884,7 +884,7 @@ header .header2 h3 {
     .pomo-timer button { font-size: 15px; padding: 8px 12px; margin: 4px; }
 
     .footer { padding: 15px; }
-    .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+    .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 25px; }
     .footer-links { justify-content: center; gap: 8px; flex-wrap: nowrap; }
     .footer-links a { font-size: 13px; padding: 6px 10px; }
 }
