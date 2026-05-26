@@ -19,6 +19,104 @@ function openFeatures() {
 openFeatures();
 
 
+function weatherFunctionality() {
+  var apiKey = WEATHER_API_KEY; 
+  var city = "Bhopal";
+
+  var header1Time = document.querySelector(".header1 h1");
+  var header1Date = document.querySelector(".header1 h2");
+  var header2Temp = document.querySelector(".header2 h2");
+  var header2Condition = document.querySelector(".header2 h4");
+  var precipitation = document.querySelector(".header2 .Precipitation");
+  var humidity = document.querySelector(".header2 .Humidity");
+  var wind = document.querySelector(".header2 .Wind");
+
+  var data = null;
+
+  async function weatherAPICall() {
+    try {
+      var response = await fetch(
+        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+      );
+      data = await response.json();
+
+      header2Temp.innerHTML = `${data.current.temp_c}°C`;
+      header2Condition.innerHTML = `${data.current.condition.text}`;
+      wind.innerHTML = `Wind: ${data.current.wind_kph} km/h`;
+      humidity.innerHTML = `Humidity: ${data.current.humidity}%`;
+      precipitation.innerHTML = `Heat Index : ${data.current.heatindex_c}%`;
+    } catch (error) {
+      console.error("Weather API call failed:", error);
+      header2Condition.innerHTML = "Error fetching weather";
+    }
+  }
+
+  function timeDate() {
+    const totalDaysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    var date = new Date();
+    var dayOfWeek = totalDaysOfWeek[date.getDay()];
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var tarik = date.getDate();
+    var month = monthNames[date.getMonth()];
+    var year = date.getFullYear();
+
+    header1Date.innerHTML = `${tarik} - ${month} - ${year}`;
+
+    if (hours > 12) {
+      header1Time.innerHTML = `${dayOfWeek}, ${String(hours - 12).padStart(
+        2,
+        "0"
+      )}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
+        2,
+        "0"
+      )} PM`;
+    } else {
+      header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart(
+        2,
+        "0"
+      )}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
+        2,
+        "0"
+      )} AM`;
+    }
+  }
+
+  weatherAPICall();
+  timeDate();
+
+  setInterval(timeDate, 1000);
+}
+
+weatherFunctionality();
+
+
+
 function todoList() {
   var currentTask = [];
 
@@ -35,11 +133,14 @@ function todoList() {
 
     currentTask.forEach(function (elem, idx) {
       sum =
-        sum +
+      sum +
         `<div class="task">
-            <h5>${elem.task} <span class=${elem.imp}>imp</h5>
+            <div class="task-info">
+              <h5>${elem.task} <span class="${elem.imp}">imp</span></h5>
+              ${elem.details ? `<p class="task-detail">${elem.details}</p>` : ""}
+            </div>
             <button id=${idx}>Mark as Completed</button>
-        </div>`;
+      </div>`;
     });
 
     allTask.innerHTML = sum;
@@ -222,103 +323,6 @@ function pomodoroTimer() {
 pomodoroTimer();
 
 
-function weatherFunctionality() {
-  var apiKey = WEATHER_API_KEY; 
-  var city = "Bhopal";
-
-  var header1Time = document.querySelector(".header1 h1");
-  var header1Date = document.querySelector(".header1 h2");
-  var header2Temp = document.querySelector(".header2 h2");
-  var header2Condition = document.querySelector(".header2 h4");
-  var precipitation = document.querySelector(".header2 .Precipitation");
-  var humidity = document.querySelector(".header2 .Humidity");
-  var wind = document.querySelector(".header2 .Wind");
-
-  var data = null;
-
-  async function weatherAPICall() {
-    try {
-      var response = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
-      );
-      data = await response.json();
-
-      header2Temp.innerHTML = `${data.current.temp_c}°C`;
-      header2Condition.innerHTML = `${data.current.condition.text}`;
-      wind.innerHTML = `Wind: ${data.current.wind_kph} km/h`;
-      humidity.innerHTML = `Humidity: ${data.current.humidity}%`;
-      precipitation.innerHTML = `Heat Index : ${data.current.heatindex_c}%`;
-    } catch (error) {
-      console.error("Weather API call failed:", error);
-      header2Condition.innerHTML = "Error fetching weather";
-    }
-  }
-
-  function timeDate() {
-    const totalDaysOfWeek = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-
-    const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-
-    var date = new Date();
-    var dayOfWeek = totalDaysOfWeek[date.getDay()];
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
-    var tarik = date.getDate();
-    var month = monthNames[date.getMonth()];
-    var year = date.getFullYear();
-
-    header1Date.innerHTML = `${tarik} ${month}, ${year}`;
-
-    if (hours > 12) {
-      header1Time.innerHTML = `${dayOfWeek}, ${String(hours - 12).padStart(
-        2,
-        "0"
-      )}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
-        2,
-        "0"
-      )} PM`;
-    } else {
-      header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart(
-        2,
-        "0"
-      )}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
-        2,
-        "0"
-      )} AM`;
-    }
-  }
-
-  weatherAPICall();
-  timeDate();
-
-  setInterval(timeDate, 1000);
-}
-
-weatherFunctionality();
-
-
 
 function goalsList() {
   var currentGoals = [];
@@ -333,7 +337,10 @@ function goalsList() {
     let sum = "";
     currentGoals.forEach(function (elem, idx) {
       sum += `<div class="task">
-        <h5>${elem.task} <span class="${elem.imp}">imp</span></h5>
+        <div class="task-info">
+          <h5>${elem.task} <span class="${elem.imp}">imp</span></h5>
+          ${elem.details ? `<p class="task-detail">${elem.details}</p>` : ""}
+        </div>
         <button id="${idx}">Mark as Completed</button>
       </div>`;
     });

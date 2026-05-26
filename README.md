@@ -1,88 +1,133 @@
-# Productivity Dashboard
+# 🧠 Pro Dashboard | Shahbaz Alam
 
-A **modern, interactive dashboard** designed to help you stay organized, motivated, and productive throughout the day. Built with **HTML, CSS, and JavaScript**, this project combines task management, daily planning, motivational quotes, weather updates, and a Pomodoro timer—all in one sleek interface.
+A **modern, interactive productivity dashboard** designed to help you stay organized, motivated, and focused throughout the day. Built with **HTML, CSS, and JavaScript** — no frameworks, no libraries, just clean vanilla code.
 
-## Features
+![Dashboard Preview](https://images.unsplash.com/photo-1717361281431-e75c972e3f07?w=800&auto=format&fit=crop&q=60)
 
-### 1. To-Do List
-- Create, update, and delete tasks.
-- Mark tasks as important.
-- Tasks are stored locally using `localStorage`.
+---
 
-### 2. Daily Planner
-- Plan your day hour by hour.
-- Save your schedule in the browser with `localStorage`.
-- Responsive layout for desktop and mobile.
+## ✨ Features
 
-### 3. Motivational Quotes
-- Fetches a random quote daily from the **ZenQuotes API**.
-- Stay inspired while working.
+### ✅ To-Do List
+- Add tasks with details and mark them as important
+- Tasks persist across sessions using `localStorage`
+- Delete tasks by marking them as completed
 
-### 4. Pomodoro Timer
-- Work in focused intervals (25 minutes) with short breaks.
-- Start, pause, and reset functionality.
-- Visual session indicators for Work and Break periods.
+### 📅 Daily Planner
+- Plan your day hour by hour (6 AM – 11 PM)
+- Auto-saves to `localStorage` — no data lost on refresh
+- Clean 2-column grid layout
 
-### 5. Weather Updates
-- Displays current temperature, condition, wind, humidity, and heat index for your city.
-- Real-time updates with Weather API integration.
+### 💬 Motivational Quotes
+- Fetches a random quote from **FreeAPI Quotes**
+- Fallback quotes if API is unavailable
+- Beautiful card design with author attribution
 
-### 6. Theme Toggle
-- Switch between **light** and **dark** modes with a single click.
+### ⏱️ Pomodoro Timer
+- 25-minute work sessions with 5-minute breaks
+- Start, Pause, and Reset controls
+- Auto-switches between Work Session and Break
 
+### 🌤️ Weather Widget
+- Real-time weather for **Bhopal, MP**
+- Shows temperature, condition, humidity, wind, and heat index
+- Powered by **WeatherAPI**
 
-## Technologies Used
-- **HTML5** – Markup for the dashboard structure.
-- **CSS3 & SCSS** – Styling, responsive design, and theme management.
-- **JavaScript (ES6)** – Dynamic features like To-Do list, planner, Pomodoro timer, and API integrations.
-- **APIs Used:**  
-  - ZenQuotes API – Fetch motivational quotes.  
-  - Weather API – Get real-time weather updates.
+### 🎯 Daily Goals
+- Set and track your daily goals separately from tasks
+- Mark as important, add details, save to `localStorage`
 
-## Installation
+### 🌙 Theme Toggle
+- Switch between **dark** and **light** mode instantly
+- Sun/moon icon in the navbar
 
-1. Clone the repository:
-```   
-   git clone https://github.com/shahbazal0m/productivity-dashboard
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Usage |
+|---|---|
+| HTML5 | Dashboard structure |
+| CSS3 | Styling, animations, responsive design |
+| JavaScript (ES6) | All dynamic features and API calls |
+| WeatherAPI | Real-time weather data |
+| FreeAPI Quotes | Motivational quotes |
+| localStorage | Data persistence |
+
+---
+
+## 🚀 Installation
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/shahbazal0m/productivity-dashboard
 ```
-3. Navigate to the project folder:
+
+2. **Navigate to the project folder:**
+```bash
 cd productivity-dashboard
-4. Open index.html in your browser.
-5. Add your Weather API key in config.js:
+```
+
+3. **Add your Weather API key in `config.js`:**
+```js
 const WEATHER_API_KEY = "YOUR_API_KEY_HERE";
+```
+> Get your free API key at [weatherapi.com](https://www.weatherapi.com)
 
+4. **Open `index.html` in your browser** — done!
 
-## Usage
+---
 
-- To-Do List: Click the "To Do List" card → Add tasks → Mark as important → Save in local storage.
+## 📖 Usage
 
-- Daily Planner: Click the "Daily Planner" card → Plan your day → Data saved automatically.
+| Feature | How to use |
+|---|---|
+| To-Do List | Click card → Add task → Mark important → Auto-saved |
+| Daily Planner | Click card → Fill time slots → Auto-saved |
+| Motivation | Click card → Quote loads automatically |
+| Pomodoro Timer | Click card → Start → Work 25 min → Break 5 min |
+| Daily Goals | Click card → Add goals → Track progress |
+| Theme Toggle | Click sun/moon icon in navbar |
 
-- Motivation: Click the "Motivation" card → Fetches a daily motivational quote.
+---
 
-- Pomodoro Timer: Click the "Pomodoro Timer" card → Start working in focused sessions.
+## 📁 Folder Structure
 
-- Daily Goals: Click the "Daily Goals" card → Track your goals for the day.
-
-- Theme Toggle: Click the sun/moon icon to switch between light and dark modes.
-
-## Folder Structure
+```
 productivity-dashboard/
 │
-├── index.html
-├── style.css
-├── script.js
-├── config.js         # Add your Weather API key here
-├── Fonts/            # Custom fonts
-├── icons/            # Icons used in the dashboard
+├── index.html          # Main HTML file
+├── style.css           # All styles + responsive design
+├── script.js           # All JavaScript logic
+├── config.js           # Weather API key (not committed)
+├── Fonts/              # Custom Aeonik fonts
+│   ├── AeonikTRIAL-Light.otf
+│   ├── AeonikTRIAL-Bold.otf
+│   └── AeonikTRIAL-Regular.otf
 └── README.md
+```
 
-## Author 
+---
 
-Shahbaz Alam
+## 📱 Responsive Design
 
-- GitHub: https://github.com/shahbazal0m
+| Screen | Breakpoint |
+|---|---|
+| Desktop | > 1024px |
+| Tablet | ≤ 1024px |
+| Mobile | ≤ 768px |
+| Small Mobile | ≤ 480px |
 
-- LinkedIn: https://www.linkedin.com/in/iamshahbaz-alam/
+---
 
-"Stay productive, stay focused"
+## 👨‍💻 Author
+
+**Shahbaz Alam**
+
+[![GitHub](https://img.shields.io/badge/GitHub-shahbazal0m-181717?style=flat&logo=github)](https://github.com/shahbazal0m)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-iamshahbaz--alam-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/iamshahbaz-alam/)
+[![Twitter](https://img.shields.io/badge/Twitter-shahbaz__al0m-1DA1F2?style=flat&logo=twitter)](https://x.com/shahbaz_al0m)
+
+---
+
+> *"Stay productive, stay focused"*
